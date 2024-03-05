@@ -37,6 +37,17 @@ for $a$ sufficiently large (like $a=12$). Union bounding over all $i$, we have t
 Now for $i \geq i_0 = \frac{1}{2}(\log n - \log\log n)$, $d_i > 2Np$. By the [[Chernoff Bound]], all vertices have degree at most $2Np$ red neighbors with high probability. If we condition on this event, there are no vertices of red degree greater than $d_{i_0}$ in $W$. Let's count the number of pairs of vertices in $W$ with a common red neighbor in $V\setminus W$. By the above discussion, this is at most
 $$
 \begin{align}
-	N\binom{d_1}{2} + \sum_{i=2}^{i_0-1}N_{i-1}\binom{d_i}{2}
+	N\binom{d_1}{2} + \sum_{i=2}^{i_0-1}N_{i-1}\binom{d_i}{2} & \leq c\left(\frac{n}{\log n}\right)^250a^2\log^2n + 10a^2n\log^2n\sum_{i=2}^{i_0-1}e^{2i}/i^2\\
+	&\leq 50a^2cn^2 + 20a^2n\log^2n\left(\frac{n}{\log n}\right)\cdot \frac{4}{\log^2n}\\
+	&\leq 50a^2cn^2 + 80a^2\frac{n^2}{\log n}.
 \end{align}
 $$
+For any $\delta > 0$, the above quantity can be made smaller than $\delta n^2$ if we pick $c$ sufficiently small (depending on $a$ and $\delta$). Thus, if $c$ is small enough, at least $(1-\delta)\binom n2$ of the pairs in $W$ do not have common red neighbors in $V\setminus W$. Now if we pick $\delta = 1/2$ and $a=12$, this is a set of at least $n^2/6$ pairs, so the probability that there is no red edge here is at most
+$$
+(1-p)^{n^2/6} \leq e^{-n^2p/6}= e^{-2n\log n} = n^{-2n}.
+$$
+Thus, 
+$$
+\Pr[\overline{C_W}] \leq n^{-2n} + n^{-2n} < n^{-n}.
+$$
+Union bounding over all $\binom{N}{n} =o(n^n$) possible sets $W$, we conclude that $\cap_W C_W$ occurs with high probability. 
