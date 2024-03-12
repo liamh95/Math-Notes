@@ -1,6 +1,6 @@
 Date Created: 2024-03-04
 References: #ref/NONE
-Tags: #theorem #ramsey-theory/ramsey-numbers #probabilistic-method/alterations #erdos #in-progress
+Tags: #theorem #ramsey-theory/ramsey-numbers #probabilistic-method/alterations #erdos
 
 Proved by: <i>Not Applicable</i>
 References: Conlon Ramsey theory notes: Lecture 2

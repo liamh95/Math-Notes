@@ -8,103 +8,55 @@
         "type": "tabs",
         "children": [
           {
-            "id": "29ebeb0dc827c6d3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Conlon Ramsey Theory/Diagonal Ramsey Number.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "a85223bc87c0aab9",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Conlon Ramsey Theory/Diagonal Ramsey Number.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "60c4b7bad58f72f6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Conlon Ramsey Theory/Ramsey Number.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "5c43023c08681107",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Conlon Ramsey Theory/Small Ramsey Numbers.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "ccf24bdea68857ce",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Conlon Ramsey Theory/Goodman's Formula.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "844ee4b4457ce869",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Conlon Ramsey Theory/Monochromatic Triangles in Two Coloring of K_n.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "40a4c7d315519ee2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Conlon Ramsey Theory/Diagonal Ramsey Number Recursive Bound.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "9188db5d8f999612",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "r(3,n) Random Lower Bound.md",
+                "file": "Triangle Free Independence Number Lower Bound.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "508a00381aea47bc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Balogh Combinatorics/Independent Set Problems.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "d6a8efb4be1d25ae",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Balogh Combinatorics/Hypergraph Containers Motivation.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "0b019104b0d0d368",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Graph Container Lemma.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 7
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -170,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "r(3,n) Random Lower Bound.md",
+                "file": "Graph Container Lemma.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -187,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "r(3,n) Random Lower Bound.md",
+                "file": "Graph Container Lemma.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -210,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "r(3,n) Random Lower Bound.md"
+                "file": "Graph Container Lemma.md"
               }
             }
           }
@@ -231,10 +183,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9188db5d8f999612",
+  "active": "0b019104b0d0d368",
   "lastOpenFiles": [
+    "Balogh Combinatorics/Hypergraph Containers Motivation.md",
+    "Graph Container Lemma.md",
+    "Balogh Combinatorics/Independent Set Problems.md",
+    "Triangle Free Independence Number Lower Bound.md",
+    "Balogh Combinatorics",
+    "Conlon Ramsey Theory/r(3,n) Random Lower Bound.md",
     "Conlon Ramsey Theory/Diagonal Ramsey Number Random Lower Bound.md",
-    "r(3,n) Random Lower Bound.md",
     "Conlon Ramsey Theory/Off-Diagonal Ramsey Numbers Random Lower Bound.md",
     "Chernoff Bound.md",
     "Off-Diagonal Ramsey Numbers Random Lower Bound.md",
@@ -251,7 +208,6 @@
     "Templates/Corollary.md",
     "Templates/Definition.md",
     "Templates/Theorem.md",
-    "Untitled",
     "Conlon Ramsey Theory/Ramsey Number.md",
     "Conlon Ramsey Theory/Diagonal Ramsey Number Exponential Bound.md",
     "Templates",

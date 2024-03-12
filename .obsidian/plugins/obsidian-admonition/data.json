@@ -61,6 +61,18 @@
       "injectColor": true,
       "noTitle": false,
       "copy": false
+    },
+    "algorithm": {
+      "type": "algorithm",
+      "color": "248, 248, 255",
+      "icon": {
+        "type": "obsidian",
+        "name": "lucide-workflow"
+      },
+      "command": false,
+      "title": "Algorithm",
+      "injectColor": true,
+      "noTitle": true
     }
   },
   "syntaxHighlight": false,
