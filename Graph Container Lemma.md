@@ -27,3 +27,16 @@ C:= V(G)\setminus \big(N(v) \cup \{u\in V(G): d(u) > d(v)\}\big).
 $$
 This way, even if $d(v)$ isn't that big, we can throw away a lot of vertices to make $C$ smaller. Let's try to iterate this.
 
+```ad-algorithm
+Input: $I$ an independent set of the graph $G$ and a positive real number $t$.
+
+Let $A = V(G)$ be the set of available vertices.
+
+1. If $\Delta(G[A]) < t-1$, output $S(I) = S$ and set $C(S)  = S\cup A$. Otherwise...
+2. Let $v\in A$ be the vertex with maximum degree in $G[A]$ (break ties according to some arbitrary ordering on $V(G)$). If $v\notin I$, then set $A = A\setminus \{v\}$ and go back to step 1. If $v\in I$...
+3. Set $S = S\cup \{v\}$ and $A = A\setminus \big(\{v\} \cup N_{G[A]}(v)\big)$. Go back to step 1.
+```
+
+By design, $I\subseteq S\cup A = C(S)$ and step 1 ensures that $\Delta(G[C(S)]) < t-1$.
+
+Now define $\mathcal C = \{C(S(I)): I\in \mathcal I(G)\}$. It remains to show that this collection is not too large.
