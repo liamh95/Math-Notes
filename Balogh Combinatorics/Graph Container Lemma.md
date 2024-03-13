@@ -1,6 +1,6 @@
 Date Created: 2024-03-11
 References: #ref/NONE
-Tags: #theorem #graph-theory/containers #in-progress 
+Tags: #theorem #graph-theory/containers
 
 Proved by: <i>Not Applicable</i>
 References: <i>Not Applicable</i>
@@ -30,13 +30,14 @@ This way, even if $d(v)$ isn't that big, we can throw away a lot of vertices to 
 ```ad-algorithm
 Input: $I$ an independent set of the graph $G$ and a positive real number $t$.
 
-Let $A = V(G)$ be the set of available vertices.
-
-1. If $\Delta(G[A]) < t-1$, output $S(I) = S$ and set $C(S)  = S\cup A$. Otherwise...
-2. Let $v\in A$ be the vertex with maximum degree in $G[A]$ (break ties according to some arbitrary ordering on $V(G)$). If $v\notin I$, then set $A = A\setminus \{v\}$ and go back to step 1. If $v\in I$...
-3. Set $S = S\cup \{v\}$ and $A = A\setminus \big(\{v\} \cup N_{G[A]}(v)\big)$. Go back to step 1.
+1. Fix some ordering of the vertex set $V(G) = \{v_1, \ldots, v_n\}$ and set $G_0 ;= G$. Initialize the set $S = S(I) := \emptyset$ (the "signature" of $I$).
+2. While $\Delta(G_i) \geq t$:
+	1. Let $u$ be a vertex of maximum degree in $G_i$. If there are ties, take the one that comes first in the fixed ordering of $V(G)$.
+	2. If $u \in I$, then set $S := S\cup \{u\}$ and $G_{i+1} := G_i\setminus N_{G_i}[u]$.
+	3. If $u\notin I$, then let $G_{i+1} := G_i\setminus \{u\}$.
+3. Output $S(I)$ and set $C(S) = S\cup G_{i+1}$.
 ```
 
-By design, $I\subseteq S\cup A = C(S)$ and step 1 ensures that $\Delta(G[C(S)]) < t-1$.
+By design, $I\subseteq S\cup V(G_{i+1})$ and $\Delta(G[C(S)]) < t$.
 
-Now define $\mathcal C = \{C(S(I)): I\in \mathcal I(G)\}$. It remains to show that this collection is not too large.
+Now define $\mathcal C = \{C(S(I)): I\in \mathcal I(G)\}$. It remains to show that this collection is not too large. If the algorithm hasn't terminated yet, then $\Delta(G_{i+1}) \geq t$. Every time we add a vertex to $S$, we remove a vertex and its at least $t$ neighbors from $G_i$. So we remove at least $t+1$ vertices at a time from $G$, and there are at most $n/(t+1)$ steps. Thus, $|S| \leq n/(t+1)$. In total, we have at most $\binom{n}{\leq n/(t+1)}$ choices for $S$.
