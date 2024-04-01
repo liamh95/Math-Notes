@@ -9,6 +9,8 @@ Justifications: <i>Not Applicable</i>
 Specializations: <i>Not Applicable</i>
 Generalizations: <i>Not Applicable</i>
 
+Even when we use shortest paths each time, there still appears to be some waste in the [[Edmonds-Karp Algorithm]]. When we use BFS to 
+
 ```ad-theorem
 title: Dinic's Algorithm
 

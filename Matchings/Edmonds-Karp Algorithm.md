@@ -22,6 +22,8 @@ title: Edmonds-Karp Algorithm
 Edmonds-Karp implements Ford-Fulkerson by selecting a *shortest* $s\to t$ path in the residual graph during each iteration.
 ```
 
+This can be done by running [[Breadth-First Search]] for example.
+
 ```ad-theorem
 title: Edmonds-Karp Algorithm Runtime
 

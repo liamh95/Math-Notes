@@ -4,22 +4,71 @@
     "type": "split",
     "children": [
       {
-        "id": "973a363e9269c807",
+        "id": "3a7422439aa747b4",
         "type": "tabs",
         "children": [
           {
-            "id": "37839261932807c7",
+            "id": "9188db5d8f999612",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Dinic's Algorithm.md",
+                "file": "Triangle Free Independence Number Lower Bound.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "fd70ac8f2427d053",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "q-Colorings of d-Regular Graphs.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "f3b985058ac8ffb9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Breadth-First Search.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "90a169059797939a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Asaf's Probabilistic Methods Class/Probabilistic Method Basic Idea.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "7d05a88be875c7c1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Conlon Ramsey Theory/Diagonal Ramsey Number Random Lower Bound.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -48,7 +97,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#in-progress",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -85,7 +134,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Dinic's Algorithm.md",
+                "file": "Conlon Ramsey Theory/Diagonal Ramsey Number Random Lower Bound.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +151,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Dinic's Algorithm.md",
+                "file": "Conlon Ramsey Theory/Diagonal Ramsey Number Random Lower Bound.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +174,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Dinic's Algorithm.md"
+                "file": "Conlon Ramsey Theory/Diagonal Ramsey Number Random Lower Bound.md"
               }
             }
           }
@@ -146,39 +195,39 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "37839261932807c7",
+  "active": "7d05a88be875c7c1",
   "lastOpenFiles": [
+    "Conlon Ramsey Theory/Diagonal Ramsey Number Exponential Bound.md",
+    "Asaf's Probabilistic Methods Class/First Moment Method.md",
+    "Asaf's Probabilistic Methods Class/Probabilistic Method Basic Idea.md",
+    "Breadth-First Search.md",
+    "Asaf's Probabilistic Methods Class",
+    "Matchings/Edmonds-Karp Algorithm.md",
+    "Matchings/Pasted image 20240331174604.png",
     "Dinic's Algorithm.md",
     "Hopcroft-Karp Bipartite Matching Algorithm.md",
-    "Matchings/Edmonds-Karp Algorithm.md",
-    "Matchings/Ford-Fulkerson Algorithm.md",
-    "Matchings/Flow Constraints.md",
-    "Conlon Ramsey Theory/Monochromatic Triangles in Two Coloring of K_n.md",
-    "Graph Container Lemma.md",
-    "q-Colorings of d-Regular Graphs.md",
-    "Tools/Stirling's Approximation.md",
-    "Tools/Chernoff Bound.md",
-    "Tools",
-    "Pasted image 20240331174604.png",
-    "Matchings/Min Cut Max Flow Theorem.md",
-    "Matchings/Integral Flow Theorem.md",
+    "Edmonds-Karp Algorithm.md",
     "Matchings/Flow-Based Bipartite Matching Algorithm.md",
+    "Matchings/Ford-Fulkerson Algorithm.md",
+    "Matchings/Integral Flow Theorem.md",
+    "Matchings/Min Cut Max Flow Theorem.md",
+    "Matchings/Flow Constraints.md",
     "Matchings/Blossom.md",
     "Matchings/Berge's Theorem.md",
+    "Tools/Stirling's Approximation.md",
+    "Tools/Chernoff Bound.md",
+    "q-Colorings of d-Regular Graphs.md",
     "Matchings",
-    "Balogh Combinatorics/d-Regular Graph Independent Sets.md",
-    "Balogh Combinatorics/Graph Container Lemma.md",
-    "Balogh Combinatorics/Hypergraph Containers Motivation.md",
-    "Balogh Combinatorics/Independent Set Problems.md",
-    "Conlon Ramsey Theory/Diagonal Ramsey Number.md",
-    "r(3,n) Random Lower Bound.md",
     "Triangle Free Independence Number Lower Bound.md",
-    "Conlon Ramsey Theory/r(3,n) Random Lower Bound.md",
+    "Balogh Combinatorics/Independent Set Problems.md",
+    "Balogh Combinatorics/Hypergraph Containers Motivation.md",
+    "Tools",
+    "Balogh Combinatorics/Graph Container Lemma.md",
+    "Balogh Combinatorics/d-Regular Graph Independent Sets.md",
     "Balogh Combinatorics",
+    "Conlon Ramsey Theory/r(3,n) Random Lower Bound.md",
     "Conlon Ramsey Theory/Diagonal Ramsey Number Random Lower Bound.md",
     "Conlon Ramsey Theory/Off-Diagonal Ramsey Numbers Random Lower Bound.md",
-    "Chernoff Bound.md",
-    "Untitled",
     "Templates",
     "Conlon Ramsey Theory",
     "Lovasz"
