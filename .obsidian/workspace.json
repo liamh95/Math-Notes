@@ -4,83 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "3a7422439aa747b4",
+        "id": "973a363e9269c807",
         "type": "tabs",
         "children": [
           {
-            "id": "9188db5d8f999612",
+            "id": "37839261932807c7",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Triangle Free Independence Number Lower Bound.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "fd70ac8f2427d053",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "q-Colorings of d-Regular Graphs.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "2309e702a8802070",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Matchings/Ford-Fulkerson Algorithm.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "eb1dabaea78cc463",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Matchings/Flow-Based Bipartite Matching Algorithm.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "29b36fd66eab35c7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Hopcroft-Karp Bipartite Matching Algorithm.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "4c16f4eb51d2c5af",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Edmonds-Karp Algorithm.md",
+                "file": "Dinic's Algorithm.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 5
+        ]
       }
     ],
     "direction": "vertical"
@@ -109,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#in-progress",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -146,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Edmonds-Karp Algorithm.md",
+                "file": "Dinic's Algorithm.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -163,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Edmonds-Karp Algorithm.md",
+                "file": "Dinic's Algorithm.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -186,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Edmonds-Karp Algorithm.md"
+                "file": "Dinic's Algorithm.md"
               }
             }
           }
@@ -207,37 +146,39 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "4c16f4eb51d2c5af",
+  "active": "37839261932807c7",
   "lastOpenFiles": [
-    "Pasted image 20240331174604.png",
+    "Dinic's Algorithm.md",
     "Hopcroft-Karp Bipartite Matching Algorithm.md",
-    "Edmonds-Karp Algorithm.md",
-    "Matchings/Flow-Based Bipartite Matching Algorithm.md",
+    "Matchings/Edmonds-Karp Algorithm.md",
     "Matchings/Ford-Fulkerson Algorithm.md",
-    "Matchings/Integral Flow Theorem.md",
-    "Matchings/Min Cut Max Flow Theorem.md",
     "Matchings/Flow Constraints.md",
-    "Matchings/Blossom.md",
-    "Matchings/Berge's Theorem.md",
+    "Conlon Ramsey Theory/Monochromatic Triangles in Two Coloring of K_n.md",
+    "Graph Container Lemma.md",
+    "q-Colorings of d-Regular Graphs.md",
     "Tools/Stirling's Approximation.md",
     "Tools/Chernoff Bound.md",
-    "q-Colorings of d-Regular Graphs.md",
-    "Matchings",
-    "Triangle Free Independence Number Lower Bound.md",
-    "Balogh Combinatorics/Independent Set Problems.md",
-    "Balogh Combinatorics/Hypergraph Containers Motivation.md",
     "Tools",
-    "Balogh Combinatorics/Graph Container Lemma.md",
+    "Pasted image 20240331174604.png",
+    "Matchings/Min Cut Max Flow Theorem.md",
+    "Matchings/Integral Flow Theorem.md",
+    "Matchings/Flow-Based Bipartite Matching Algorithm.md",
+    "Matchings/Blossom.md",
+    "Matchings/Berge's Theorem.md",
+    "Matchings",
     "Balogh Combinatorics/d-Regular Graph Independent Sets.md",
-    "Balogh Combinatorics",
+    "Balogh Combinatorics/Graph Container Lemma.md",
+    "Balogh Combinatorics/Hypergraph Containers Motivation.md",
+    "Balogh Combinatorics/Independent Set Problems.md",
+    "Conlon Ramsey Theory/Diagonal Ramsey Number.md",
+    "r(3,n) Random Lower Bound.md",
+    "Triangle Free Independence Number Lower Bound.md",
     "Conlon Ramsey Theory/r(3,n) Random Lower Bound.md",
+    "Balogh Combinatorics",
     "Conlon Ramsey Theory/Diagonal Ramsey Number Random Lower Bound.md",
     "Conlon Ramsey Theory/Off-Diagonal Ramsey Numbers Random Lower Bound.md",
-    "Off-Diagonal Ramsey Numbers Random Lower Bound.md",
-    "Conlon Ramsey Theory/Diagonal Ramsey Number Recursive Bound.md",
-    "Conlon Ramsey Theory/Monochromatic Triangles in Two Coloring of K_n.md",
-    "Conlon Ramsey Theory/Goodman's Formula.md",
-    "Conlon Ramsey Theory/Small Ramsey Numbers.md",
+    "Chernoff Bound.md",
+    "Untitled",
     "Templates",
     "Conlon Ramsey Theory",
     "Lovasz"

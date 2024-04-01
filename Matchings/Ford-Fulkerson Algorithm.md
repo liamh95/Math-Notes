@@ -48,6 +48,8 @@ f(v,u) &\text{if }(v,u)\in E
 \end{cases},
 $$
 is positive.
+
+An $s\to t$ path in the residual graph is called an **augmenting path**.
 ```
 
 The first case is intuitive: it just sets the residual capacity to whatever room is left over after we've sent flow. The second case allows us to send flow back up $(v,u)$, which might not have even been an edge in the original graph.
