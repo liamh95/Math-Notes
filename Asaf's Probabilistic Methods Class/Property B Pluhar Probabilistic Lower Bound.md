@@ -1,6 +1,6 @@
 Date Created: 2024-04-02
 References: #ref/NONE
-Tags: #theorem #in-progress
+Tags: #theorem #probabilistic-method #graph-theory
 
 Proved by: <i>Not Applicable</i>
 References: <i>Not Applicable</i>
@@ -22,7 +22,8 @@ By design, there are clearly no monochromatic red edges once this procedure term
 $$
 \frac{(n-1)!\cdot (n-1)!}{(2n-1)!}.
 $$
-Consequently, if $m = |E(H)|$, the expected number of simple pairs is
+Consequently, if $m = |E(H)|$, then a union bound shows that the probability that there is a simple pair is at most
 $$
-\binom m2 \frac{[(n-1)!]^2}{(2n-1)!} = \frac 1n\binom m2\binom{2n-1}{n}^{-1}.
+\binom m2 \frac{[(n-1)!]^2}{(2n-1)!} = \frac 2n\binom m2\binom{2n}{n}^{-1}.
 $$
+By [[Stirling's Approximation]], $\binom {2n}{n} \approx \frac{4^n}{\sqrt{\pi n}}$, so this is less than 1 when $m \approx (\frac{n}{\pi})^{1/4}2^n$.
