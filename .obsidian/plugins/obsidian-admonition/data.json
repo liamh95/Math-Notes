@@ -73,6 +73,19 @@
       "title": "Algorithm",
       "injectColor": true,
       "noTitle": true
+    },
+    "problem": {
+      "type": "problem",
+      "color": "248, 248, 255",
+      "icon": {
+        "name": "question-circle",
+        "type": "font-awesome"
+      },
+      "command": false,
+      "title": "Problem",
+      "injectColor": true,
+      "noTitle": false,
+      "copy": false
     }
   },
   "syntaxHighlight": false,
