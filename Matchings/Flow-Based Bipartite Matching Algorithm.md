@@ -1,6 +1,6 @@
 Date Created: 2024-03-31
 References: #ref/NONE
-Tags: #theorem #graph-theory/matchings #graph-theory/algorithms
+Tags: #theorem #graph-theory/matchings #graph-theory/algorithms #graph-theory/bipartite-graphs #graph-theory/flows 
 
 Proved by: <i>Not Applicable</i>
 References: <i>Not Applicable</i>
