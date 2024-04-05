@@ -28,7 +28,7 @@ $$
 $$
 But our lemma doesn't tell us anything about the size of the individual containers, just that they have small maximum degree. The idea is then to show that, in this case, subgraphs of $d$-regular graphs with small max degree are small.
 
-Set $t = \sqrt{d\log d}$ and apply the [[Graph Container Lemma]]. For any independent set $I$, the containers algorithm outputs a set $S(I)$ with $|S(I)| \leq n/\sqrt{d\log d}$. The container lemma also says that $G_S := G\setminus N(S)$ satisfies $\Delta(G_S) < \sqrt{d\log d}$. 
+Set $t = \sqrt{d\log d}$ and apply the [[Graph Container Lemma]]. For any independent set $I$, the containers algorithm outputs a set $S(I)$ with $|S(I)| \leq n/\sqrt{d\log d}$. The container lemma also says that $G_S := G\setminus N(S)$ satisfies $\Delta(G_S) < \sqrt{d\log d}$. (The container is $C(S) = S\cup G_S$?)
 
 Let's estimate the number of vertices in $G_S$, which we denote by $m$. Let's count the crossings between $G_S$ and $G\setminus G_S$. Since $G$ is $d$-regular and each vertex in $S$ had degree at least $t$ in $G_i$ when it was added to $S$, 
 $$

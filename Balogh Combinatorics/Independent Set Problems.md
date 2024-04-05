@@ -37,5 +37,5 @@ title: Arithmetic Progressions
 Say we want to count subsets of $[n]$ containing no $k$-term arithmetic progression ($k$-AP).
 We can build a $k$-uniform hypergraph $\mathcal H$ with $V(\mathcal H) = [n]$ and $S\subseteq \binom{[n]}{k}$ is an edge in $H$ if and only if $S$ is a $k$-AP.
 
-Then $A\subseteq [n]$ is $k$-AP-free if and only if it corresponds to an independent set in $\mathcal H$. The problem of finding a large $k$-AP-free set is equivalent to finding a large independent set in this $\mathcal H$. Szemer´edi's theorem says that $\alpha(\mathcal H) = o(n)$.
+Then $A\subseteq [n]$ is $k$-AP-free if and only if it corresponds to an independent set in $\mathcal H$. The problem of finding a large $k$-AP-free set is equivalent to finding a large independent set in this $\mathcal H$. Szemeredi's theorem says that $\alpha(\mathcal H) = o(n)$.
 ```
