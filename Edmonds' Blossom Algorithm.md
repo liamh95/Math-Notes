@@ -11,6 +11,23 @@ Generalizations: <i>Not Applicable</i>
 
 By [[Berge's Theorem]], a matching $M$ in a graph $G$ is maximum if and only if $G$ contains no $M$-augmenting path. At a high level, we can build a maximum matching by starting with some (maybe empty) matching and successively augmenting it (if $P$ is an $M$-augmenting path, then $M\triangle P$ is a larger matching). Ostensibly, it comes down to how we find these augmenting paths.
 
+If $G$ contains a [[Blossom]] and the edges inside the cycle incident to the root are also unmatched, then we can toggle the stem and make the root unmatched.
+
+### Lifting blossoms
+
+```ad-proposition
+
+Given a graph $G$ and a matching $M$, let $B$ be a blossom in $G$. Then there is an $M$-augmenting path in $G$ if and only if there is an $M/B$-augmenting path in $G/B$.
+```
+
+*Proof.* We can always toggle the stem, so we assume it has length zero, and that the only vertex in the cycle that links two unmatched edges is free. Since all other vertices in the blossom are matched, any other edges out of $B$ are non-matching.
+
+Suppose $P$ is an $M$-augmenting path in $G$. If $P$ does not go through $B$, then it's still an augmenting path of the contraction $G/B$. If $P$ does go through $B$, since the root, $r$, is the only unmatched vertex in $B$, there must be at least one unmatched vertex $v$ in $G$ which is an end of $P$, but is not in $B$. Since $r$ is unmatched in $G/B$, the path from $v$ to $r$ that goes along $P$ is an $M/B$-augmenting path in $G/B$.
+
+Conversely, suppose there is an $M/B$-augmenting path $P'$ in $G/B$ and that we contract $B$ in $G$ to $u$ in $G/B$. If $P'$ does not go through $u$, then $P'$ is unchanged when we un-contract $B$. If $P'$ does go through $u$, then since $u$ is unmatched, it must be an end of $P'$. Say the other end is $s$ and that $e$ is the edge connected to $u$ in $P'$. If we un-contract $B$ and $e$ is connected to the root of $B$ (so the two edges incident to $u$ in $B$ are both unmatched), then the path from the root to $s$ is an $M$-augmenting path in $G$. On the other hand, if $e$ connects to $B$ through a matched vertex, just start the $M$-augmenting path at the root.
+
+### Finding augmenting paths
+
 
 
 ```ad-theorem
