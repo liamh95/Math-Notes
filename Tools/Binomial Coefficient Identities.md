@@ -1,6 +1,6 @@
 Date Created: 2024-04-11
 References: #ref/NONE
-Tags: #proposition #in-progress
+Tags: #proposition
 
 Proved by: <i>Not Applicable</i>
 References: <i>Not Applicable</i>
@@ -64,4 +64,6 @@ $$
 
 ```
 
-### 
+### Algebraic proof
+
+*Proof.* By the [[Binomial Theorem]], $(1+x)^n = \sum_{j=0}^n\binom nj x^j$. Jus differentiate this and plug in $x=1$ to get the first equation. Differentiate twice to get the second.
