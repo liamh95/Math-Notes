@@ -54,5 +54,14 @@ $$
 ```ad-proposition
 title: Polynomially-weighted sum of binomial coefficients
 
+For any nonnegative integer $n$,
+$$
+\begin{align}
+\sum_{j=0}^nj\binom nj &= n2^{n-1}\\
+\sum_{j=0}^nj^2\binom nj &= (n+n^2)2^{n-2}.
+\end{align}
+$$
 
 ```
+
+### 
