@@ -28,7 +28,17 @@ Conversely, suppose there is an $M/B$-augmenting path $P'$ in $G/B$ and that we 
 
 ### Finding augmenting paths
 
+Similar to [[Dinic's Algorithm]], we construct a sort of layered graph. 
 
+```ad-algorithm
+title: Finding Augmenting Paths
+
+1. Put all unmatched vertices in $L_0$ and mark them.
+2. Given the even layer $L_{2i}$, construct the next odd layer $L_{2i+1}$ as follows. For each vertex $u\in L_{2i}$ and edge $(u,v)\in E\setminus M$, do the following.
+	a. If $v$ is unmarked, then place it in layer $L_{2i+1}$ and mark it.
+	b. If $v$ is marked
+		i. If $v$ is in $L_{2i}$, then 
+```
 
 ```ad-theorem
 title: Edmonds' Blossom Algorithm
