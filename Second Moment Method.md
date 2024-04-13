@@ -1,6 +1,6 @@
 Date Created: 2024-04-12
 References: #ref/NONE
-Tags: #theorem #in-progress
+Tags: #theorem #probabilistic-method/first-moment-method #probabilistic-method/second-moment-method 
 
 Proved by: <i>Not Applicable</i>
 References: <i>Not Applicable</i>
@@ -37,7 +37,10 @@ $$
 $$
 ```
 
-*Proof.* 
+*Proof.* Consider the random variable $(X-\mu)^2$. This variable is nonnegative and its mean is the variance of $X$. Now just apply Markov's inequality:
+$$
+\Pr[|X-\mu| \geq t] = \Pr[(X-\mu)^2 \geq t^2] \leq \frac{E[(X-\mu)^2]}{t^2} = \frac{\sigma^2}{t^2}.
+$$
 
 ```ad-theorem
 title: Second Moment Method
