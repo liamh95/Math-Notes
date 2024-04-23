@@ -1,5 +1,5 @@
 Date Created: 2024-04-11
-References: #ref/NONE
+References: [[Alon, Noga and Spencer, Joel - The Probabilistic Method - 2015]]
 Tags: #theorem #graph-theory/independence-number #graph-theory/triangle-free #probabilistic-method/first-moment-method 
 
 Proved by: <i>Not Applicable</i>

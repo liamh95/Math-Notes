@@ -36,7 +36,7 @@ md - mt \leq e(G_S, G\setminus G_S) \leq (n-m)d.
 $$
 Rearranging, we have
 $$
-m \leq \frac{n}{2}\cdot \frac{d}{d-t/2} \leq \frac{n}{2}\left( 1 + \sqrt{\frac{d}{\log d}}\right).
+m \leq \frac{n}{2}\cdot \frac{d}{d-t/2} \leq \frac{n}{2}\left( 1 + \sqrt{\frac{\log d}{ d}}\right).
 $$
 This is a supersaturation result: if $G$ is $d$-regular and any set with more than $(1+\epsilon)\alpha(G)$ vertices has many edges. Note that $n/2$ is a reasonable threshold, since the $K_{d,d}$ example shows that we can get independent sets of size $n/2$.
 

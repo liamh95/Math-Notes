@@ -1,5 +1,5 @@
 Date Created: 2024-04-12
-References: #ref/NONE
+References: [[Alon, Noga and Spencer, Joel - The Probabilistic Method - 2015]]
 Tags: #theorem #probabilistic-method/first-moment-method #combinatorial-geometry #probabilistic-method/alterations 
 
 Proved by: <i>Not Applicable</i>

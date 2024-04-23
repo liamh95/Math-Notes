@@ -1,5 +1,5 @@
 Date Created: 2024-03-01
-References: #ref/NONE
+References: [[Conlon, David - Ramsey Theory Lecture Notes - Lecture 1]]
 Tags: #theorem #ramsey-theory/ramsey-numbers #technique/pigeonhole-principle
 
 Proved by: <i>Not Applicable</i>

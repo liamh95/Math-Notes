@@ -1,5 +1,5 @@
 Date Created: 2024-03-02
-References: #ref/NONE
+References: [[Conlon, David - Ramsey Theory Lecture Notes - Lecture 1]]
 Tags: #theorem #graph-theory
 
 Proved by: <i>Not Applicable</i>

@@ -1,5 +1,5 @@
 Date Created: 2024-03-05
-References: #ref/NONE
+References: [[Conlon, David - Ramsey Theory Lecture Notes - Lecture 3]]
 Tags: #theorem #graph-theory/independence-number #shearer #graph-theory/triangle-free 
 
 Proved by: <i>Not Applicable</i>
@@ -36,6 +36,10 @@ $$
 By the convexity of $f$, $f(d_x) \geq f(d) + (d_x-d)f'(d)$, so by induction,
 $$
 \begin{align}
-	\alpha(G) &= 
+	\alpha(G) &= 1 + \frac 1N\sum_{v\in V}\alpha(G_x)\text{ (why?)}\\
+	&\geq 1 + \frac 1N\sum_{v\in V}f(d_x)(N-1-d(x))\\
+	&\geq 1 + \frac 1N\sum_{v\in V}\big( f(d) + (d_x-d)f'(d)\big)(N-1-d(x))\\
+	& = 1 + Nf(d) - (d+1)f(d)+(d^2+d)f'(d)+\frac{f'(d)}{N}\sum_{v\in V}(d_x(N-d(x)-1)-Nd).
 \end{align}
 $$
+Now by the 

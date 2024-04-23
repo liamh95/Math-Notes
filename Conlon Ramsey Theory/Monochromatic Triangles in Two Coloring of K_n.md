@@ -1,6 +1,5 @@
 Date Created: 2024-03-04 
-References: #ref/NONE 
-Tags: #corollary
+References: [[Conlon, David - Ramsey Theory Lecture Notes - Lecture 1]]
 Proved by: [[Goodman's Formula]]
 References: <i>Not Applicable</i>
 Justifications: <i>Not Applicable</i>

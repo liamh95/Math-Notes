@@ -1,5 +1,5 @@
 Date Created: 2024-03-04
-References: #ref/NONE
+References: [[Conlon, David - Ramsey Theory Lecture Notes - Lecture 1]]
 Tags: #corollary #ramsey-theory/ramsey-numbers 
 
 Proved by: <i>Not Applicable</i>

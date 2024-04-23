@@ -1,5 +1,5 @@
 Date Created: 2024-04-02
-References: #ref/NONE
+References: [[Alon, Noga and Spencer, Joel - The Probabilistic Method - 2015]]
 Tags: #theorem #probabilistic-method/first-moment-method #graph-theory 
 
 Proved by: <i>Not Applicable</i>

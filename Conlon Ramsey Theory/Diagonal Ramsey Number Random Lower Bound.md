@@ -1,5 +1,5 @@
 Date Created: 2024-03-04
-References: #ref/NONE
+References: [[Conlon, David - Ramsey Theory Lecture Notes - Lecture 2]]
 Tags: #theorem #ramsey-theory/ramsey-numbers #probabilistic-method/first-moment-method
 
 Proved by: <i>Not Applicable</i>
