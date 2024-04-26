@@ -42,4 +42,20 @@ $$
 	& = 1 + Nf(d) - (d+1)f(d)+(d^2+d)f'(d)+\frac{f'(d)}{N}\sum_{v\in V}(d_x(N-d(x)-1)-Nd).
 \end{align}
 $$
-Now by the 
+Now by the expression we have for $e(G_x)$ above, so
+$$
+d_x(N - d(x) - 1) = Nd - 2d(x)\tilde{d}(x).
+$$
+Hence,
+$$
+\alpha(x) \geq 1 + Nf(d) - (d+1)f(d) + (d^2+d)f'(d)+\frac{f'(d)}{N}\sum_{x\in V}\big( -2d(x)\tilde{d}(x)\big).
+$$
+Now since
+$$
+\sum_{v\in V}d(x)\tilde{d}(x) = \sum_{x\in V}\sum_{y\in N(x)}d(y) = \sum_{y\in V}d^2(y) \geq Nd^2,
+$$
+and $f'<0$,
+$$
+\alpha(G) \geq 1 + Nf(d) - (d+1)f(d)+(d-d^2)f'(d).
+$$
+Now by that equation at the top of this proof, $1-(d+1)f(d)+(d-d^2)f'(d) = 0$, and we're done.

@@ -5,7 +5,7 @@ Tags: #definition #ramsey-theory/ramsey-numbers
 Types: <i>Not Applicable</i>
 Examples: <i>Not Applicable</i>
 Constructions: <i>Not Applicable</i>
-Generalizations: <i>Not Applicable</i>
+Generalizations: [[Hypergraph Ramsey Numbers]]
 
 Properties: <i>Not Applicable</i>
 Sufficiencies: <i>Not Applicable</i>
