@@ -1,5 +1,5 @@
 Date Created: 2024-04-26
-References: 
+References: [[Magniez et al - Search via Quantum Walk - 2011]]
 Tags: #reference #author/le-gall-francois
 
 | **Authors** | Le Gall, Francois                                                           |
