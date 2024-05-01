@@ -23,7 +23,15 @@ This is lighter on memory since we only need to store our current vertex and hav
 
 A random walk on $G$ corresponds to an $N\times N$ stochastic matrix where $P_{uv} = 1/d(u)$ if $v\in N(u)$ and 0 otherwise. If $v\in \mathbb{R}^N$ is a probability distribution on $V(G)$, then $vP$ is the new probability distribution on the vertices after taking one step of the random walk (see [[Discrete-Time Markov Chain]]).
 
-If we assume that $G$ is connected and not bipartite, then $vP^k$ will converge to the uniform distribution on $V(G)$, and we'll see that the speed of convergence depends on the gap between the largest and second largest eigenvalues of $P$. Let $|\lambda_1| \geq |\lambda_2| \geq \cdots \geq |\lambda_N|$ be the (left) eigenvalues of $P$ arranged by magnitude in the complex plane, and let 
+If we assume that $G$ is connected and not bipartite, then $vP^k$ will converge to the uniform distribution on $V(G)$, and we'll see that the speed of convergence depends on the gap between the largest and second largest eigenvalues of $P$. 
+
+Let $D$ be the *degree matrix* of $G$, i.e. $D_{uv} = d(u)$ if $v=u$ and 0 otherwise. While $P$ is not necessarily symmetric, it is similar to a symmetric matrix as
+$$
+D^{1/2}PD^{-1/2} = D^{1/2}(D^{-1}A)D^{-1/2} = D^{-1/2}AD^{-1/2} =: M.
+$$
+Here, $A$ is the adjacency matrix of $G$. We then have $P = D^{-1/2}MD^{1/2}$. Since $P$ and $M$ are similar, they have the same eigenvalues. Since $M$ is symmetric, is has an orthonormal basis of eigenvectors.
+
+Let $|\lambda_1| \geq |\lambda_2| \geq \cdots \geq |\lambda_N|$ be the (left) eigenvalues of $P$ arranged by magnitude in the complex plane and let $v_i$ be the eigenvector for $\lambda_i$. By the Perron-Frobenius theorem, $\lambda_1 = 1$ and this eigenvalue is simple. Let $\delta:= 1-|\lambda_2|$ denote the *spectral gap* of $G$. 
 
 
 
