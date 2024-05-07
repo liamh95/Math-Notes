@@ -40,7 +40,7 @@ When we apply $E_{01}$, then we'll be left with
 $$
 \frac{1}{\sqrt 2}\big( |01\rangle + |10\rangle \big),
 $$
-a uniform superposition on *proper* two-colorings. We can do this as long as we have all color combinations for $i$ and $j$ present in equal amplitude. The unitaries $E_{ij}$ preserve equality of amplitude of the endpoints. We can ensure that these color combinations are present by processing edges in [[Depth-First Search|DFS]] tree ordering.
+a uniform superposition on *proper* two-colorings. We can do this as long as we have all color combinations for $i$ and $j$ present and with in equal amplitude. The unitaries $E_{ij}$ preserve equality of amplitude of the endpoints. In order for all color combinations to be present, we need one of the $i$ or $j$ to be unprocessed, i.e., we need $ij$ to be a tree edge in a [[Depth-First Search|DFS]] tree. Consequently, we should process edges in a DFS tree order. 
 
 For each back-edge $e_{ij}$, consider the projective measurement with operators $M_{ij}$ and $I-M_{ij}$, where
 $$

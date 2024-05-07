@@ -10,11 +10,12 @@ Specializations: <i>Not Applicable</i>
 Generalizations: <i>Not Applicable</i>
 
 
+## The Problem
+
+Say we have an undirected graph $G$ on $N$ vertices. Say an $\epsilon$-fraction of the vertices are "marked" and we want to find a marked vertex.
 ## Classical Random Walks
 
-### Markov chain review
-
-Say we have an undirected graph $G$ on $N$ vertices. Say an $\epsilon$-fraction of the vertices are "marked" and we want to find a marked vertex. One way we could do this is to just sample vertices at random. This might not be feasible if we don't have access to all of $G$ at once. Another option is to randomly walk along $G$ as follows.
+One way we could do this is to just sample vertices at random. This might not be feasible if we don't have access to all of $G$ at once. Another option is to randomly walk along $G$ as follows.
 1. Start at some specific vertex $y\in V$ (deterministic or random)
 2. `while` $y$ is not a marked vertex
 	1. Let $x$ be a random neighbor of  $y$
@@ -23,16 +24,21 @@ This is lighter on memory since we only need to store our current vertex and hav
 
 A random walk on $G$ corresponds to an $N\times N$ stochastic matrix where $P_{uv} = 1/d(u)$ if $v\in N(u)$ and 0 otherwise. If $v\in \mathbb{R}^N$ is a probability distribution on $V(G)$, then $vP$ is the new probability distribution on the vertices after taking one step of the random walk (see [[Discrete-Time Markov Chain]]).
 
-If we assume that $G$ is connected and not bipartite, then $vP^k$ will converge to the uniform distribution on $V(G)$, and we'll see that the speed of convergence depends on the gap between the largest and second largest eigenvalues of $P$. 
-
-Let $D$ be the *degree matrix* of $G$, i.e. $D_{uv} = d(u)$ if $v=u$ and 0 otherwise. While $P$ is not necessarily symmetric, it is similar to a symmetric matrix as
+Let's assume that $G$ is regular and non-bipartite. Then $vP^t$ will converge to the uniform distribution on $V(G)$, and the speed of convergence depends on the gap between the largest and second largest eigenvalues of $P$. In particular (see [[Random Walk Spectral Gap Convergence Speed]]), 1 is the largest eigenvalue of $P$ and if we let $g$ be the gap between 1 and the (absolute value of) second largest eigenvalue, then
 $$
-D^{1/2}PD^{-1/2} = D^{1/2}(D^{-1}A)D^{-1/2} = D^{-1/2}AD^{-1/2} =: M.
+\|vP^t - \pi\| \leq e^{-gt},
 $$
-Here, $A$ is the adjacency matrix of $G$. We then have $P = D^{-1/2}MD^{1/2}$. Since $P$ and $M$ are similar, they have the same eigenvalues. Since $M$ is symmetric, is has an orthonormal basis of eigenvectors.
+which is less than some constant $\eta$ as long as $t \geq \frac{1}{g}\ln(1/\eta)$. So after this many steps, we have around an $\epsilon$ probability of hitting a marked state.
 
-Let $|\lambda_1| \geq |\lambda_2| \geq \cdots \geq |\lambda_N|$ be the (left) eigenvalues of $P$ arranged by magnitude in the complex plane and let $v_i$ be the eigenvector for $\lambda_i$. By the Perron-Frobenius theorem, $\lambda_1 = 1$ and this eigenvalue is simple. Let $\delta:= 1-|\lambda_2|$ denote the *spectral gap* of $G$. 
-
+So if $S$ is the cost of setting up the walk data structure, $U$ is the cost of updating the walk state and $C$ is the cost of checking if a state is marked state, consider this procedure.
+1. Start at some vertex $v$
+2. while $v$ is not marked
+	1. run $\frac{1}{g}\ln(1/\eta)$ steps of the random walk 
+Then the expected number of queries we need is
+$$
+S + \frac{1}{\epsilon}(C + \frac{1}{g}U),
+$$
+up to constant factors.
 
 
 
@@ -45,3 +51,10 @@ title: Quantum Walks
 ```
 
 <i>Proof.</i> <% tp.file.cursor(2) %>
+
+
+
+
+## Quantum Walk
+
+Here's a quantum approach that's pretty reminiscent of [[Grover's Algorithm]]. 
