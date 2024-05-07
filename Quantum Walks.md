@@ -1,6 +1,6 @@
 Date Created: 2024-04-29
-References: [[de Wolf, Ronald - Quantum Computing Lecture Notes - 2023]]
-Tags: #theorem #quantum-computation #quantum-computation/graph-algorithms #probability/markov-chains 
+References: [[de Wolf, Ronald - Quantum Computing Lecture Notes - 2023]] [[Santha, Miklos - Quantum walk based search algorithms - 2008]]
+Tags: #theorem #quantum-computation #quantum-computation/graph-algorithms #probability/markov-chains #probability/random-walk 
 
 Proved by: <i>Not Applicable</i>
 References: <i>Not Applicable</i>
