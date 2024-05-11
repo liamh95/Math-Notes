@@ -10,51 +10,30 @@ Specializations: <i>Not Applicable</i>
 Generalizations: <i>Not Applicable</i>
 
 
-## The Problem
-
-Say we have an undirected graph $G$ on $N$ vertices. Say an $\epsilon$-fraction of the vertices are "marked" and we want to find a marked vertex.
-## Classical Random Walks
-
-One way we could do this is to just sample vertices at random. This might not be feasible if we don't have access to all of $G$ at once. Another option is to randomly walk along $G$ as follows.
-1. Start at some specific vertex $y\in V$ (deterministic or random)
-2. `while` $y$ is not a marked vertex
-	1. Let $x$ be a random neighbor of  $y$
-	2. Set $y$ to $x$
-This is lighter on memory since we only need to store our current vertex and have a reference to its neighbors (i.e. we only need local info about our graph).
-
-A random walk on $G$ corresponds to an $N\times N$ stochastic matrix where $P_{uv} = 1/d(u)$ if $v\in N(u)$ and 0 otherwise. If $v\in \mathbb{R}^N$ is a probability distribution on $V(G)$, then $vP$ is the new probability distribution on the vertices after taking one step of the random walk (see [[Discrete-Time Markov Chain]]).
-
-Let's assume that $G$ is regular and non-bipartite. Then $vP^t$ will converge to the uniform distribution on $V(G)$, and the speed of convergence depends on the gap between the largest and second largest eigenvalues of $P$. In particular (see [[Random Walk Spectral Gap Convergence Speed]]), 1 is the largest eigenvalue of $P$ and if we let $g$ be the gap between 1 and the (absolute value of) second largest eigenvalue, then
+What should the quantum analogue of a random walk (on a graph $G$) look like? Well at each step, we jump from the current vertex to one of its neighbors. One way to put this into a quantum framework is to work in to work in the space $V \otimes C$, where $C$ is a "coin space". To take a step in the walk, we apply a unitary "coin flip" operation $F$, controlled by the vertex register. More specifically, we should have something like 
 $$
-\|vP^t - \pi\| \leq e^{-gt},
+F|x, c\rangle = |x\rangle \otimes F^x|c\rangle,
 $$
-which is less than some constant $\eta$ as long as $t \geq \frac{1}{g}\ln(1/\eta)$. So after this many steps, we have around an $\epsilon$ probability of hitting a marked state.
+where $F^x$ shuffles the state $|c\rangle$ based on the vertex $x$. For example, if $G$ is a $d$-regular graph, then we can take $C$ to just be the linear span of $\{|j\rangle: 1 \leq j\leq d\}$  and $F^x$ can just be the [[Quantum Fourier Transform]] independent of $x$.
 
-So if $S$ is the cost of setting up the walk data structure, $U$ is the cost of updating the walk state and $C$ is the cost of checking if a state is marked state, consider this procedure.
-1. Start at some vertex $v$
-2. while $v$ is not marked
-	1. run $\frac{1}{g}\ln(1/\eta)$ steps of the random walk 
-Then the expected number of queries we need is
+After we apply a coin flip, we advance the vertex state controlled by the coin state. This operator, call it $S$ (for "shift") takes $|x, c\rangle$ to some $|y, c\rangle$, where $y$ is some neighbor of $x$, dependent on $c$. When $G$ is $d$-regular and our coin space is spanned by the integers 1 through $d$, we can just assign these integers to fixed neighbors of $x$, so $S|x, c\rangle = |y, c\rangle$, where $y$ is the $c$-th neighbor of $x$.
+
+For general graphs, we can take the coin space to also be $V$. In this case, the flip $F$ takes $|x, y\rangle$ to $|x\rangle$ tensored with a uniform superposition of $x$'s neighbors (where the phases are such that this operation is indeed unitary) and $S$ just swaps the registers. So really, the states $|x,y\rangle$ we deal with will always correspond to (perhaps directed) edges of $G$.
+
+If we let $F'$ be the flip controlled on the second register instead, notice that
 $$
-S + \frac{1}{\epsilon}(C + \frac{1}{g}U),
+FS|x, y\rangle = F|y, x\rangle = |y\rangle \otimes F^y|x\rangle
 $$
-up to constant factors.
+and
+$$
+SF'|x,y\rangle = S(F^y|x\rangle \otimes |y\rangle) = |y\rangle \otimes F^y|x\rangle.
+$$
+So in particular, $SFSF = F'F$ and we can do away with the flips. We can then think of a quantum walk as alternately flipping the left and right registers -- that is, it should take $|x, y\rangle$, which corresponds to some edge, mix the right endpoint over neighbors of the left, then take the left endpoints of the resulting superposition and mix them over neighbors of the new right register. If we let $\mathcal A$ be the span of the states $|x\rangle |p_x\rangle$ and $\mathcal B$ be the span of the states $|p_y\rangle|y\rangle$, where
+$$
+|p_x\rangle = \sum_{y\in V}\sqrt{P_{xy}}|y\rangle,
+$$
+then the reflections through $\mathcal A$ and $\mathcal B$ should be the operators that do this. Here, $P$ is the usual random walk matrix for the graph $G$. Apparently sometimes we want reflection through $\mathcal B'$, the span of the states $|p_y^*\rangle |y\rangle$, where $P^*$ is the matrix for the time-reversed walk defined by the [[Detailed Balance Equations]]
+$$
+\pi_xP_{xy} = \pi_yP^*_{yx}.
+$$
 
-
-
-
-```ad-theorem
-title: Quantum Walks
-
-
-
-```
-
-<i>Proof.</i> <% tp.file.cursor(2) %>
-
-
-
-
-## Quantum Walk
-
-Here's a quantum approach that's pretty reminiscent of [[Grover's Algorithm]]. 

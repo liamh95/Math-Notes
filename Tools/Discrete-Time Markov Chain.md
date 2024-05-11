@@ -92,10 +92,39 @@ A **stationary distribution** on the state space $X$ is a distribution $\pi$ suc
 ```
 
 ```ad-theorem
-title: Finite Ergodit Markov Chains Have Stationary Distributions
+title: Finite Ergodic Markov Chains Have Stationary Distributions
 
 Any finite, irreducible and ergodic Markov chain has the following properties:
 1. the chain has a unique stationary distribution, $\pi$;
 2. for all $i$ and $j$, the limit $\lim_{t\to \infty}P^t_{j,i}$ exists and is independent of $j$;
 3. $\pi_i = \lim_{t\to \infty}P^t_{j,i} = 1/h_{i,i}$.
 ```
+
+## Reverse Markov Property
+
+A quippy summary of the Markov property is that "the future depends only on the present, not the past." It turns out that we can sort of reverse this
+
+```ad-proposition
+
+If $X_n$ is a Markov chain, then for any $k\geq 0$,
+$$
+\Pr[X_{n-1} = x_{n-1} \mid X_n = x_n] = \Pr[X_{n-1}=x_{n-1} \mid X_n=x_n,\ldots, X_{n+k}=x_{n+k}].
+$$
+```
+Put obnoxiously, "the past depends only on the present, not the future."
+
+*Proof.* Repeated application of the Markov property tells us that for any $k\geq 0$,
+$$
+\Pr[X_{n+1}=x_{n+1}, \ldots, X_{n+k} = x_{n+k}\mid X_n = x_n, X_{n-1}=x_{n-1}] = \Pr[X_{n+1}=x_{n+1}, \ldots, X_{n+k} = x_{n+k}\mid X_n = x_n].
+$$
+If we multiply both sides of this by $\Pr[X_{n-1} =x_{n-1}\mid X_n = x_n]$, then we get
+$$
+\Pr[X_{n-1} = x_{n-1}, X_{n+1}=x_{n+1}, \ldots, X_{n+k}=x_{n+k}\mid X_n=x_n] = \Pr[X_{n+1}=x_{n+1}, \ldots, X_{n+k} = x_{n+k}\mid X_n = x_n]\Pr[X_{n-1} =x_{n-1}\mid X_n = x_n].
+$$
+Now divide both sides by the first term on the RHS to get
+$$
+\begin{align}
+\Pr[X_{n-1}=x_{n-1}\mid X_n=x_n] &= \frac{\Pr[X_{n-1} = x_{n-1}, X_{n+1}=x_{n+1}, \ldots, X_{n+k}=x_{n+k}\mid X_n=x_n]}{\Pr[X_{n+1}=x_{n+1}, \ldots, X_{n+k} = x_{n+k}\mid X_n = x_n]}\\
+&= \Pr[X_{n-1}=x_{n-1}\mid X_n = x_n, \ldots, X_{n+k}=x_{n+k}].
+\end{align}
+$$
