@@ -71,7 +71,26 @@ If the starting state is instead
 $$
 |0\rangle \otimes \frac{1}{\sqrt 2}\big(|+1\rangle - i|-1\rangle  \big),
 $$
-then one can show that the walk now has a symmetric distribution.
+then one can show that the walk now has a symmetric distribution. Interestingly though, it is *not* the same as a classical random walk. For example, on the fourth step, the state is
+$$
+2^{-5/2}\big[-(1+i)\big(|-4, -3\rangle + |-2, -3\rangle \big) + (1+3i)|-2,-1\rangle -(1-i)|0,-1\rangle + (1+i)|0,1\rangle - (3-i)|2,1\rangle + (1-i)\big(-|2,3\rangle + |4,3\rangle \big)  \big].
+$$
+At this point, measurement would give these outcomes
 
+| Position | Probability |
+| -------- | ----------- |
+| $-4$     | $1/16$      |
+| $-2$     | $3/8$       |
+| $0$      | $1/8$       |
+| $2$      | $3/8$       |
+| $4$      | $1/16$      |
+Whereas the classical random walk has these statistics
 
+| Position | Probability |
+| -------- | ----------- |
+| $-4$     | $1/16$      |
+| $-2$     | $1/4$       |
+| $0$      | $3/8$       |
+| $2$      | $1/4$       |
+| $4$      | $1/16$      |
 
