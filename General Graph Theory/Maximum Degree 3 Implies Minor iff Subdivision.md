@@ -29,5 +29,19 @@ Putting this all together, we see that we can assume that all contractions are a
 
 ### Other proof
 
-*Proof:* Say $G$ has an $F$-minor where $F$ has $k$ vertices. Then there is a partition $V(G) = V_0 \cup V_1 \cup \cdots V_k$ where we can delete $V_0$ and shrink the $V_i$'s to points, $i \geq 1$ to obtain $F$. In particular we can label $V(F) = \{w_1, \ldots, w_k\}$ so that for each edge $w_iw_j \in E(F)$, there are vertices $v_i \in V_i$ and $v_j\in V_J$ with $v_iv_j \in E(G)$. To find an $F$ subdivision, our plan is to find vertices $u_i \in V_i$ and for each edge $w_iw_j\in E(F)$ a path $P_{ij}$ in $G$ connecting $u_i$ to $u_j$ in such a way that $P_{ij}$ is internally vertex-disjoint from $P_{i'j'}$ for $ij \neq i'j'$. The $u_i$'s along with these paths will be the subdivision (not necessarily induced).
+*Proof:* Say $G$ has an $F$-minor where $F$ has $k$ vertices. Then there is a partition $V(G) = V_0 \cup V_1 \cup \cdots V_k$ where we can delete $V_0$ and shrink the (connected) $V_i$'s to points, $i \geq 1$ to obtain $F$. In particular we can label $V(F) = \{w_1, \ldots, w_k\}$ so that for each edge $f_{ij} \in E(F)$, there are vertices $v_i \in V_i$ and $v_j\in V_j$ (not necessarily unique, but can be fixed) with $e_{ij}:= v_iv_j \in E(G)$. To find an $F$ subdivision, our plan is to find vertices $u_i \in V_i$,  $i\geq 1$, and for each edge $f_{ij}\in E(F)$ a path $P_{ij}$ in $G$ connecting $u_i$ to $u_j$ in such a way that $P_{ij}$ is internally vertex-disjoint from $P_{i'j'}$ for $ij \neq i'j'$. We'll construct these paths to be made of a path $P_i^j \subseteq V_i$ connecting $u_i$ to the vertex $e_{ij}\cap V_i$, followed by $e_{ij}$, followed by the path $P_j^i\subseteq V_j$ connecting vertex $e_{ij}\cap V_j$ to $u_j$. The $u_i$'s along with these paths will be the subdivision (not necessarily induced).
 
+- Say $w_i \in V(F)$ has degree 1 and let $f_{ij} \in E(F)$ be the corresponding edge. In $G$ this corresponds to an edge $e_{ij}$. In this case, set $u_i = e_{ij} \cap V_i$ and $P_i^j = \emptyset$.
+
+![[subdivision1.png]]
+- If $w_i \in V(F)$ has degree 2, let $w_j, w_k \in V(F)$ be its neighbors. These correspond to edges $e_{ij}$ and $e_{ik}$ in $E(G)$. Let $x_j = e_{ij} \cap V_i$ and $x_k = e_{ik}\cap V_k$ (note that it could be the case that $x_j = x_k$). Set $u_i := x_j$, $P_i^j:= \emptyset$ and $P_i^k$ a shortest path in $V_i$ from $x_j$ to $x_k$. 
+
+![[subdivision2.png]]
+
+- If $w_i \in V(F)$ has degree 3, let $w_j, w_k, w_\ell$ be its neighbors. These give edges $e_{ij}, e_{ik}$ and $e_{i\ell}$ in $G$. Say these have endpoints $x_j$, $x_k$ and $x_\ell$, respectively, in $V_i$. Let $Q$ be a shortest path in $V_i$ connecting $x_j$ to $x_k$. Now let $Q'$ be a shortest path from $x_\ell$ to a vertex in $V(Q)$. Now set $u_i$ to be the unique vertex where $Q$ and $Q'$ meet. Set $P_i^j$ and $P_i^k$ to be the subpaths of $Q$ connecting $u_i$ to $x_j$ and $x_k$, respectively and set $P_i^\ell$ to be $Q'$.
+
+![[subdivision3.png]]
+
+In all three cases, we've constructed internally vertex-disjoint paths, and hence, an $F$-subdivision in $G$.
+
+Why was it important that $F$ have maximum degree at most 3? If $F$ has a vertex of degree 4, then we can't guarantee that these paths we construct are internally vertex-disjoint. In the notation used above, if $w_i$ has neighbors $w_j$, $w_k$, $w_\ell$ and $w_m$, it could be the case that the corresponding vertices $x_j$, $x_k$, $x_\ell$ and $x_m$ are only joined by a (perhaps subdivided) path like so.![[subdivision4.png]]

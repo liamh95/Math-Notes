@@ -18,3 +18,5 @@ title: Kuratowski's and Wagner's Theorems are Equivalent
 
 <i>Proof.</i> First note that any graph that contains an $F$-subdivision also has an $F$-minor: delete the vertices and edges not in the subdivision, then contract each subdivided edge into a single edge. Hence, Kuratowski implies Wagner.
 
+Since $K_{3,3}$ has maximum degree 3, any graph with a $K_{3,3}$-minor also has a $K_{3,3}$-subdivision by [[Maximum Degree 3 Implies Minor iff Subdivision]]. We [[K_5 Minor Implies Kuratowski Subdivision|also]] have that any graph with a $K_5$-minor contains either a $K_5$-subdivision or $K_{3,3}$-subdivision, so Wagner's theorem implies Kuratowski's theorem. 
+
