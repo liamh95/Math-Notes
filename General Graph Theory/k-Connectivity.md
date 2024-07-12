@@ -29,6 +29,8 @@ A graph $G$ is **$k$-connected** if every pair of distinct vertices has at least
 
 In other words, $G$ is $k$-connected when $p(x,y) \geq k$ for all $x\neq y$. By convention, an edgeless graph is 0-connected and 1-connected, but not $k$-connected for any $k > 1$.
 
+By [[Menger's Theorem#Menger's Theorem|Menger's theorem]], $G$ is $k$-connected if and only if $G\setminus S$ is connected for any $|S| \leq k-1$.
+
 ```
 
 ## Connectivity

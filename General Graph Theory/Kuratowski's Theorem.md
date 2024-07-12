@@ -9,11 +9,15 @@ Justifications: <i>Not Applicable</i>
 Specializations: <i>Not Applicable</i>
 Generalizations: <i>Not Applicable</i>
 
+## Kuratowski's Theorem
+
 ```ad-theorem
 title: Kuratowski's Theorem
 
 A graph $G$ is planar if and only if it contains no [[Subdivision|subdivision]] of either $K_5$ or $K_{3,3}$.
 
 ```
+
+## Proof
 
 <i>Proof.</i> Kuratowski's theorem is [[Kuratowski's and Wagner's Theorems are Equivalent|equivalent]] to [[Wagner's Theorem]]. According to Bondy and Murty, Wagner's theorem (formulated in terms of [[Graph Minor|minors]]) is easier to prove, so we prove that instead.
