@@ -19,13 +19,28 @@ title: Matroid
 
 A **matroid** $M$ is a pair $(E, \mathcal I)$ consisting of a finite set $E$ and a collection $\mathcal I$ of subsets of $E$ having the following three properties:
 
-- (I1): $0\in \mathcal I$;
+- (I1): $\emptyset\in \mathcal I$;
 - (I2): If $I\in \mathcal I$ and $I'\subseteq I$, then $I' \in \mathcal I$;
 - (I3): If $I_1$ and $I_2$ are in $\mathcal I$ and $|I_1| <|I_2|$, then there is an element $e\in I_2 \setminus I_1$ such that $I_1 \cup e \in \mathcal I$.
 
 The elements of $\mathcal I$ are the **independent sets** of $M$ and $E$ is the **ground set**. We call axiom (I2) the *hereditary* axiom and (I3) the *independence augmentation* axiom. Any subset of $E$ not in $\mathcal I$ is **dependent**.
 
+Per the [[Circuit#Definition|circuit]] [[Circuit#Circuit Characterization of Matroids|characterization]] of matroids, we can also define a matroid $M$ as a pair $(E, \mathcal C)$ where $E$ is a finite set and $\mathcal C$ is a collection of subsets of $E$ having the following properties:
+- (C1): $\emptyset \notin \mathcal C$;
+- (C2): If $C_1$ and $C_2$ are in $\mathcal C$ and $C_1\subseteq C_2$, then $C_1 = C_2$;
+- (C3): If $C_1$ and $C_2$ are distinct elements of $\mathcal C$ and $e\in C_1\cap C_2$, then there is a member $C_3 \in \mathcal C$ with $C_3 \subseteq (C_1\cup C_2)\setminus e$.
+
 ```
+
+
+## Isomoprhism
+
+```ad-definition
+title: Matroid isomorphism
+
+We say that matroids $M_1$ and $M_2$ are **isomorphic** (and write $M_1 \cong M_2$) if there is a map $\psi: E(M_1) \to E(M_2)$ such that $\psi(X)$ is independent in $M_2$ if and only if $X$ is independent in $M_1$.
+```
+
 
 
 ## Examples
@@ -49,3 +64,10 @@ a contradiction. So there must be an $e\in I_2\setminus I_1$ such that $I_1 \cup
 
 ### Graph example
 
+```ad-example
+title: Matroid from a graph
+
+Let $E$ be the set of edges of a graph  $G$ and $\mathcal C$ the set of edge sets of cycles of $G$. Then $\mathcal C$ is the set of circuits of a matroid on $E$ called the **cycle matroid** of $G$, $M(G)$. 
+```
+
+*Proof.* The empty set isn't a cycle and cycles do not properly contain other cycles, so we have (C1) and (C2). Now say distinct cycles $C_1$ and $C_2$ share a common edge $e = \{u,v\}$. Let $P_i$ be the $uv$-path in $G$ whose edges are $G\setminus C_i$. Starting at $u$, go along $P_1$ until we hit vertex $w$, the first vertex at which the next edge of $P_1$ is not in $P_2$. Keep going along $P_1$ until the first time a vertex $x$ is reached that is not $w$, but is also in $P_2$. Join the section of $P_1$ from $w$ to $x$ to the section of $P_2$ from $x$ to $w$. This cycle is in $(C_1 \cup C_2) \setminus e$.
