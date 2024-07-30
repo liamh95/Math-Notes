@@ -50,4 +50,15 @@ $$
 title: Minimally $k$-connected
 
 We say that an edge $e$ of a graph is **essential** if $\kappa(G\setminus e) < \kappa(G)$. A $k$-connected graph, all of whose edges are essential, is **minimally $k$-connected**.
+
+In particular, a graph is minimally $k$-connected if and only if it does not contain a $k$-connected graph as a proper [[Factor#Factor|factor]].
+```
+
+
+## Critically $k$-connected
+
+```ad-definition
+title: Critically $k$-connected
+
+
 ```
