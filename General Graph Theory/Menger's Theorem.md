@@ -1,5 +1,5 @@
 Date Created: 2024-07-09
-References: [[Bondy, J and Murty, U - Graph Theory - 2008]]
+References: [[Bondy, J and Murty, U - Graph Theory - 2008]]; [[Bollobas, Bela - Extremal Graph Theory- 1978]] - Chapter 1
 Tags: #theorem #graph-theory 
 
 Proved by: <i>Not Applicable</i>
@@ -43,4 +43,37 @@ By induction, $p_{G/Y}(x,y) = c_{G/Y}(x,y) = k$, so there are $k$ internally dis
 Now just stitch these together to make the $xy$-paths $xP_iv_iQ_iy$ and $xP_kuvQ_ky$ in $G$. Hence, $p_G(x,y) \geq k$ and we're done.
 
 ![[menger4.png]]
+
+
+
+## Pym's Proof (in Bollobas' book)
+
+Bollobas formulates this slightly differently (but equivalently). For him, the [[k-Connectivity#Local Vertex Connectivity (Bollobás)|local vertex connectivity]] $\kappa(x,y)$ is the minimum number of vertices needed to kill all $xy$-paths. He then states Menger's theorem like this.
+
+```ad-theorem
+title: Menger's Theorem
+
+Let $x,y\in V(G)$ for some graph $G$ with $x\neq y$. Then the maximum number of internally vertex disjoint $xy$-paths is $\kappa(x,y)$, where $\kappa$, the [[k-Connectivity#Local Vertex Connectivity (Bollobás)|local vertex connectivity function]] counts the number of vertices whose deletion separates $x$ and $y$.
+```
+
+*Proof.* Take any set of size $\kappa(x,y)$ whose deletion kills all $xy$-paths. Any collection $\mathcal P$ of internally vertex disjoint paths meets this set in at least $|\mathcal P|$ vertices, so the maximum number of internally vertex disjoint paths is at most $\kappa(x,y)$. It remains then to show the converse.
+
+Bollobas (it's Pym's proof really) uses the notions of [[Linking and Detaching]]. He [[Linking and Detaching#Minimal Detaching Set|proves]] that for any sets $X$ and $Y$, if $k$ is the minimum size of an $X$-$Y$ [[Linking and Detaching#Detaching|detaching]] set, then there is a $k$-set [[Linking and Detaching#Linking|linking]] some $X_0\subseteq X$ to some $Y_0\subseteq Y$. The proof of this result is more or less the same as the induction proof above. Once we have this, set $X = N(x)$ and $Y = N(y)$. If $k$ is the minimum size of an $X$-$Y$ detaching set, then there is a $k$-set in $X$ linked to a $k$-set in $Y$. But the minimum size of an $X$-$Y$ detaching set is $\kappa(x,y)$. We then have $\kappa(x,y)$ internally vertex disjoint $xy$-paths.
+
 ## Flow Proof
+
+
+
+## Edge Form
+
+By considering the [[Line Graph#Line Graph|line graph]], we obtain the edge form of Menger's theorem.
+
+```ad-theorem
+title: Menger's Theorem (Edge Form)
+
+Let $x\neq y$ be distinct vertices of the graph $G$. Then the maximum number of edge-disjoint $xy$-paths in $G$ is $\lambda(x,y)$, where $\lambda$, the [[k-Connectivity#Local Edge Connectivity (Bollobás)|local edge connectivity function]] counts the minimum number of edges whose deletion separates $x$ from $y$.
+```
+
+*Proof.* Like in the vertex form, first consider a set of $\lambda(x,y)$ edges whose deletion kills all $xy$-paths. Any set $\mathcal P$ of edge disjoint $xy$-paths meets this set in at least $|\mathcal P|$ edges, so the maximum number of edge disjoint $xy$-paths is at most $\lambda(x,y)$.
+
+Consider the [[Line Graph#Line Graph|line graph]] $L(G)$ and let $X\subseteq V(L)$ be the set of edges (in $G$) incident to $x$ and let $Y$ be the edges incident to $Y$. We [[Linking and Detaching#Minimal Detaching Set|know]] that if $k$ is the minimum size of an $X$-$Y$ [[Linking and Detaching#Detaching|detaching]] set in $L(G)$, then there is a $k$-set in $X$ [[Linking and Detaching#Linking|linked]] to a $k$-set in $Y$ in $L(G)$. The minimum size of an $X$-$Y$ detaching set in $L(G)$ is $\lambda(x,y)$, so we get this many vertex-disjoint paths in $L(G)$. Vertex disjoint paths in $L(G)$ correspond to edge-disjoint paths in $G$.
