@@ -42,3 +42,4 @@ Let $3 \leq k < \ell$ and take a tree $T$ where every vertex has either degree 1
 
 We claim that $H$ is minimally $k$-connected. Say $xy \in E(H)$. If $x$ and $y$ are on the "rim" of $H$, then there are exactly $k-1$ many $xy$-paths in $H-xy$: one by traversing the outer cycle and taking the unique $T$-path from $x$ to $y$ in the $k-2$ copies of $T$ that have their corresponding $x$'s and $y$'s identified. If $xy$ is an edge in $T$...
 
+	
