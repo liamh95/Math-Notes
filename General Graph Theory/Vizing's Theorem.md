@@ -49,22 +49,22 @@ By the definition of $c_i$, we have that $\beta = c_0(xy_i) = c_{i-1}(xy_i) = c_
 
 ## Algorithm
 
-Here's Vizing's original algorithm idea. We present it here for multigraphs like he did. The multigraph form of the theorem looks like this
+Bollobas presents what is basically Vizing's proof as an algorithm (he doesn't say anything about the runtime, but it's clear).
 
 ```ad-theorem
-title: Vizing's theorem (multigraphs)
+title: Vizing's theorem (naive algorithm)
 
-Leg $G$ be a multigraph with maximum degree $\Delta$ where each pair of vertices has at most $p$ parallel edges (so a simple graph has $p = 1$). Then $\chi'(G) \leq \Delta + p$
+Let $G$ be a graph with $n$ vertices, $m$ edges and maximum degree $\Delta$. Then there is an algorithm that properly $(\Delta+1)$-edge colors $G$ in at most $O(mn)$ steps (in the RAM model of computation where $G$ is stored as an adjacency list).
 ```
 
-*Proof.* Let's assign the edges colors from $[\Delta + p]$. Say $(a,b)$ is an uncolored edge. Let $A$ and $B$ be the sets of colors missing at $a$ and $b$ respectively. Note that $|A|$ and $|B|$ are both at least $p$. If $A\cap B \neq \emptyset$, i.e., if there is a color missing at both $a$ and $b$, just color $(a,b)$ with that color.
+*Proof.* 
 
-Suppose then that $A\cap B = \emptyset$. 
+We can turn the above proof of Vizing's theorem into an algorithm that actually constructs the coloring. Suppose the edge $xy_0$ is uncolored and $\alpha$ is missing at $x$. We will construct the special neighbors $y_0, \ldots, y_k$ as used in the above proof, i.e., there are colors $\beta_1, \ldots$ so that $\beta_i$ is missing at $y_i$ and $xy_{i+1}$  has color $\beta_i$. Say we already have the neighbors $y_0, \ldots, y_i$ and the colors $\beta_0, \ldots, \beta_i$. There is at most one edge $xy$ colored $\beta_i$. If such an edge exists and $y\notin \{y_0, \ldots, y_i\}$, put $y_{i+1} = y$ and let $\beta_{i+1}$ be any color missing at $y_{i+1}$. Otherwise, stop the sequence. Say we stop at $y_k$. The sequence terminates for one of two reasons.
+- No edge $xy$ has color $\beta_k$. Recolor the edges $xy_i$ with $i < k$, giving $xy_i$ the color $\beta_i$ (shift the colors back one). This colors everything except for $xy_k$, so just assign it color $\beta_k$, which is fine since the hypothesis of this case is that $\beta_k$ is missing at $x$ and $y_k$.
+- For some $j<k$, the edge $xy_j$ already has the color $\beta_k$. Start by recoloring $xy_i$, $i<j$, with $\beta_i$ (i.e., shift the colors of everything below $j$ down by one). This just leaves $xy_j$ uncolored. Let $H = H(\alpha, \beta_k)$ be the subgraph of $G$ formed by taking only edges colored $\alpha$ or $\beta_k$ under this shifted coloring. Since our partial coloring is proper, each vertex of $H$ has degree at most 2, so its components are paths or cycles. Now the vertices $x$, $y_j$ and $y_k$ each have degree at most 1 in $H$ ($x$ is missing $\alpha$, $y_k$ is missing $\beta_k$ and we just shifted the color $\beta_k$ out of $xy_j$), so they cannot all belong to the same component of $H$. Let's look at the following two (not mutually exclusive, but exhaustive) cases
+	- If $x$ and $y_j$ belong to different components of $H$: toggle the colors in the component of $H$ containing $y_j$. Then $\alpha$ is missing at $x$ (since they lived in different components of $H$, the toggling keeps $\alpha$ missing) and at $y_j$ (previously $\beta_k$ was missing and $\alpha$ was possibly present - this flips when we toggle), so we can color $xy_j$ with $\alpha$.
+	- If $x$ and $y_k$ belong to different components of $H$: keep shifting the colors down, i.e. color $xy_i$ with $\beta_i$ for $0 \leq i < k$, making $xy_k$ the uncolored edge. This doesn't touch any edges colored $\alpha$ (since it's missing at $x$) or $\beta_k$ (the coloring is proper and we already shifted the $\beta_k$-colored edge $xy_j$ earlier), so $H$ is unchanged. Toggle the colors in the component of $H$ containing $y_k$. This results in a graph where $\alpha$ is missing at $x$ and $y_k$ (same reasoning as above case), so color $xy_k$ with $\alpha$.
 
-
-
-
-
-We can turn the above proof of Vizing's theorem into an algorithm that actually constructs the coloring. Suppose the edge $xy_0$ is uncolored. We will construct the special neighbors $y_0, \ldots, y_k$ as used in the above proof, i.e., there are colors $\beta_1, \ldots$ so that $\beta_i$ is missing at $y_i$ and $xy_{i+1}$  has color $\beta_i$. Say we already have the neighbors $y_0, \ldots, y_i$ and the colors $\beta_0, \ldots, \beta_i$. There is at most one edge $xy$ colored $\beta_i$. If such an edge exists and $y\notin \{y_0, \ldots, y_i\}$, put $y_{i+1} = y$ and let $\beta_{i+1}$ be any color missing at $y_{i+1}$. Otherwise, stop the sequence. Say we stop at $y_k$. The sequence terminates for one of two reasons.
-- No edge $xy$ has color $\beta_i$. Recolor the edges $xy_i$ with $i < k$, giving $xy_i$ the color $\beta_i$ (shift the colors back one). This colors everything except for $xy_k$, so just assign it color $\beta_k$.
-- For some $j<k$, the edge $xy_j$ already has the color $\beta_k$. Start by recoloring $xy_i$, $i<j$, with $\beta_i$. This just leaves $xy_j$ uncolored. Let $H(s,t_h)$ be the subgraph of $G$ formed by 
+This procedure colors each of the $m$ edges one at a time. The process of assigning a color to an edge involves changing the colors of $O(n)$ other edges (we're toggling colors in graphs with degree at most two), so in total, the runtime is $O(mn)$. To be super careful, we should show that, for each edge, the whole process of assigning it a color takes $O(n)$ steps, not just the toggling part. 
+- $O(\Delta) = O(n)$ steps to pick the colors $\alpha$ and $\beta_0$ missing at $x$ and $y_0$, and then $O(1)$ steps to check to see if they're the same and then color $xy_0$ with $\alpha = \beta_0$ if they're the same.
+- $O(\Delta) = O(n)$ steps to build the fan at $x$: 
